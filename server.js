@@ -2,6 +2,8 @@ const { query } = require('express');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
 
 const PORT = process.env.PORT || 3001;
 
