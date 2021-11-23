@@ -1,0 +1,15 @@
+{{#if posts.length}}
+<section>
+  <h2>Your Budget</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/profile-page/edit/{{post.id}}" class="edit-link">Edit Budget</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
