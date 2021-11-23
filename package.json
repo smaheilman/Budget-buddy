@@ -18,7 +18,12 @@
     "url": "https://github.com/smaheilman/Budget-buddy/issues"
   },
   "homepage": "https://github.com/smaheilman/Budget-buddy#readme",
-  "dependencies": {
-    "express": "^4.17.1"
+  "dependencies": {},
+  "devDependencies": {
+    "connect-session-sequelize": "^7.1.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "path": "^0.12.7",
+    "sequelize": "^6.12.0-alpha.1"
   }
 }
