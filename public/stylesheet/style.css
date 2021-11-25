@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+header {
+  margin: 0;
+  display: flex;
+  height: 80px;
+  
+}
+header div {
+  margin-right: 1em;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 1em;
+}
+main {
+  background-image: url('../assets/images/landing-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 160px);
+
+
+}
+.btn {
+  margin: .5em;
+  background-color: rgb(2, 26, 240);
+  color: #fff;
+  border: none;
+  outline: none;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#signup-btn {
+  background: none;
+  color: rgb(2, 26, 240);
+  border: 3px solid rgb(2, 26, 240);;
+}
+footer {
+  height: 80px;
+}
