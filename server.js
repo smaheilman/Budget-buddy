@@ -8,6 +8,7 @@ const path = require('path');
 // npm i express-session connect-session-sequelize
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const exphbs = require('express-handlebars');
 
 //MIGHT USE THESE LATER
 // // npm i handlebars, npm i express-handlebars
@@ -26,8 +27,10 @@ const sess = {
   })
 };
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+const hbs = exphbs.create({});
 
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);
