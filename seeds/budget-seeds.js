@@ -12,7 +12,7 @@ const budgetdata = [
   {
     total: '5000',
     amount_spent: '2000',
-    amount_saved:'3000',
+    amount_saved:'2000',
     amount_remaining:'1000',
     user_id: 2
   },
