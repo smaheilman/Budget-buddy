@@ -1,7 +1,7 @@
 //REFACTOR FOR BONKING
 
 const router = require('express').Router();
-const { User, Budget } = require('../../models');
+const { User, Budget, Transaction } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
