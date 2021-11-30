@@ -20,6 +20,15 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false
       },
+      
+      income: {
+        type: DataTypes.DECIMAL,
+      allowNull:false,    
+      
+      validate:{
+        isDecimal:true,
+      }
+    },
       email: {
         type: DataTypes.STRING,
         allowNull: false,

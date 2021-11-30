@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Budget extends Model{}
 
-Budget.init(
+Budgets.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -24,7 +24,7 @@ Budget.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'budget'
+        modelName: 'bills'
     }
 );
 
