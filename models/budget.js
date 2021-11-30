@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Budget extends Model{}
 
-Budgets.init(
+Budget.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,7 +20,7 @@ Budgets.init(
           }
 
         },
-        amountSpent:{
+        amount_spent:{
             type:DataTypes.Decimal,
             allowNull:false,
             
@@ -29,7 +29,7 @@ Budgets.init(
           }
 
         },
-        amountSaved:{
+        amount_saved:{
             type:DataTypes.Decimal,
             allowNull:false,
             
@@ -38,7 +38,7 @@ Budgets.init(
           }
 
         },
-        amountRemaining:{
+        amount_remaining:{
             type:DataTypes.Decimal,
             allowNull:false,
             
