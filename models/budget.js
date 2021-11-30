@@ -11,6 +11,42 @@ Budgets.init(
             primaryKey: true,
             autoIncrement: true
         },
+        total:{
+            type:DataTypes.Decimal,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountSpent:{
+            type:DataTypes.Decimal,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountSaved:{
+            type:DataTypes.Decimal,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountRemaining:{
+            type:DataTypes.Decimal,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
+const { transactions } = require('.');
 const sequelize = require('../config/connection');
 
 class Transaction extends Model{}
 
-Transaction.init(
+transactions.init(
     {
         id: {
             type: DataTypes.INTEGER,

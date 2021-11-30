@@ -1,17 +1,17 @@
 // import all models
-const Post = require('./budget');
+const budget = require('./budget');
 const User = require('./user');
-const Vote = require('./transactions');
-const Comment = require('./category');
+const transactions = require('./transactions');
+const category = require('./category');
 
 // create associations
 User.hasMany(transactions, {
   foreignKey: 'user_id'
 });
 
-User.belongsToMany(Post, {
-    through: Vote,
-    as: 'voted_posts',
+User.belongsToMany(budget, {
+    through: transactions,
+    as: 'transactions_budget',
   
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
@@ -22,36 +22,23 @@ User.belongsToMany(Post, {
   });
 
   User.hasMany(Comment, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-  });
-
-
-
-Post.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
-Post.belongsToMany(User, {
-  through: Vote,
-  as: 'voted_posts',
-  foreignKey: 'post_id',
+budget.belongsToMany(User, {
+  through: transactions,
+  as: 'transactions_budget',
+  foreignKey: 'budget_id',
   onDelete: 'SET NULL'
 });
 
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+budget.hasMany(category, {
+    foreignKey: 'budget_id'
   });
 
-Post.hasMany(Vote, {
-  foreignKey: 'post_id'
-});
-
-
-Comment.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
+budget.hasMany(transactions, {
+  foreignKey: 'budget_id'
 });
 
 category.belongsTo(budget, {
@@ -59,14 +46,13 @@ category.belongsTo(budget, {
   onDelete: 'SET NULL'
 });
 
-
-category.belongsTo(User, {
-    foreignKey: 'user_id',
+category.hasMany(transactions, {
+    foreignKey: 'transactions_id',
     onDelete: 'SET NULL'
   });
   
-  transactions.belongsTo(Post, {
-    foreignKey: 'post_id',
+  transactions.belongsTo(category, {
+    foreignKey: 'category_id',
     onDelete: 'SET NULL'
   });
 

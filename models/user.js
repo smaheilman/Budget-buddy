@@ -21,7 +21,7 @@ User.init(
         allowNull: false
       },
       
-      income: {
+      monthly_income: {
         type: DataTypes.DECIMAL,
       allowNull:false,    
       
