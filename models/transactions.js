@@ -27,6 +27,15 @@ transactions.init(
               key: 'id'
             }
         },
+
+        category_id: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'category',
+            key: 'id'
+          }
+      },
+
         amount: {
           type: DataTypes.DECIMAL,
         allowNull:false,    
@@ -52,4 +61,4 @@ transactions.init(
     }
 );
 
-module.exports = Transaction;
+module.exports = transactions;
