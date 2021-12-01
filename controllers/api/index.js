@@ -13,6 +13,6 @@ router.use('/user', userRoutes);
 // router.use('/income', incomeRoutes);
 router.use('/transaction', transactionRoutes);
 router.use('/budget', budgetRoutes);
-router.use('/categorie', categoryRoutes);
+router.use('/category', categoryRoutes);
 
 module.exports = router;
