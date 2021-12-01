@@ -15,9 +15,9 @@ const userData = [
     user_name: 'Kevin',
     email: "kevin@kelbach.com",
     password: "kevin"
-  },
+  }
 ];
 
-const seedUsers = () => User.bulkCreate(categoryData);
+const seedUsers = () => User.bulkCreate(userData);
 
 module.exports = seedUsers;

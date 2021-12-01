@@ -9,7 +9,7 @@ const categoryData = [
   },
   {
     category_name: 'Shopping',
-  },
+  }
 ];
 
 const seedCategories = () => Category.bulkCreate(categoryData);

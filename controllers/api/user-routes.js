@@ -20,12 +20,8 @@ router.get('/:id', (req, res) => {
         attributes: { exclude: ['password'] },
         include: [
           {
-            model: Income,
-            attributes: ['id', 'amount', 'data', 'memo']
-          },
-          {
             model: Transaction,
-            attributes: ['id', 'amount', 'data', 'memo']
+            attributes: ['id', 'amount', 'date', 'memo_text']
           }
         ],
         where: {
@@ -51,7 +47,8 @@ router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      monthly_income: req.body.monthly_income
     })
     .then(dbUserData => {
       req.session.save(() => {
