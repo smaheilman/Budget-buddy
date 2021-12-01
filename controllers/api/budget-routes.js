@@ -1,18 +1,27 @@
 const router = require('express').Router();
-const { User, Budget } = require('../../models');
-// const sequelize = require('../../config/connection');
+const { User, Budget, Transaction, Income, Category } = require('../../models');
 
 // GET api/budget
 router.get('/', (req, res) => {
     Budget.findAll({
-      attributes: [
-        //BUDGET DATA
-      ],
+      attributes: ['id', 'total', 'amountSpent', 'amountSaved', 'amountRemaining'],
       order: [['created_at', 'DESC']], 
       include: [
         {
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
+          include: [
+            {
+              model: Transaction,
+              attributes: ['id', 'date', 'amount', 'memo_text'],
+              include: [
+                {
+                  model: Category,
+                  attributes: ['category_name']
+                }
+              ]
+            }
+          ]
         }
       ]
     })
@@ -29,13 +38,23 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: [
-        //BUDGET DATA
-      ],
+      attributes: ['id', 'total', 'amountSpent', 'amountSaved', 'amountRemaining'],
       include: [
         {
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
+          include: [
+            {
+              model: Transaction,
+              attributes: ['id', 'date', 'amount', 'memo_text'],
+              include: [
+                {
+                  model: Category,
+                  attributes: ['category_name']
+                }
+              ]
+            }
+          ]
         }
       ]
     })
@@ -55,7 +74,11 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // expects {BUDGETOBJECT}
     Budget.create({
-      //BUDGET DATA PARAM
+      user_id: req.body.user_id,
+      total: req.body.total,
+      amountSpent: req.body.amountSpent,
+      amountSaved: req.body.amountSaved,
+      amountRemaining: req.body.amountRemaining
     })
       .then(dbBudgetData => res.json(dbBudgetData))
       .catch(err => {
@@ -67,9 +90,14 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Budget.update(
       {
-        //BUDGET PARAM
+        user_id: req.body.user_id,
+        total: req.body.total,
+        amountSpent: req.body.amountSpent,
+        amountSaved: req.body.amountSaved,
+        amountRemaining: req.body.amountRemaining
       },
       {
+        individualHooks: true,
         where: {
           id: req.params.id
         }

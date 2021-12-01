@@ -1,7 +1,5 @@
-//REFACTOR FOR BONKING
-
 const router = require('express').Router();
-const { User, Budget, Transaction } = require('../../models');
+const { User, Transaction, Income } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -22,8 +20,8 @@ router.get('/:id', (req, res) => {
         attributes: { exclude: ['password'] },
         include: [
           {
-            model: Budget,
-            attributes: [DATADATATDATADATADATA]
+            model: Transaction,
+            attributes: ['id', 'amount', 'date', 'memo_text']
           }
         ],
         where: {
@@ -49,7 +47,8 @@ router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      //monthly_income: req.body.monthly_income
     })
     .then(dbUserData => {
       req.session.save(() => {
@@ -94,7 +93,7 @@ router.post('/login', (req, res) => {
           
           res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
-      });  
+      }) 
 });
 
 router.post('/logout', (req, res) => {
