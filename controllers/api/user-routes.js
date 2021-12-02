@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
         include: [
           {
             model: Transaction,
-            attributes: ['id', 'amount', 'date', 'memo_text']
+            attributes: ['id', 'amount', 'date', 'memo']
           }
         ],
         where: {

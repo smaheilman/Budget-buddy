@@ -34,7 +34,7 @@ Transaction.init(
           isDecimal:true
        }
       },
-      memo_text: {
+      memo: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {

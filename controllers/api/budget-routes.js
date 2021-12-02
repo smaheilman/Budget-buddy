@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
           include: [
             {
               model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo_text'],
+              attributes: ['id', 'date', 'amount', 'memo'],
               include: [
                 {
                   model: Category,
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
           include: [
             {
               model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo_text'],
+              attributes: ['id', 'date', 'amount', 'memo'],
               include: [
                 {
                   model: Category,
