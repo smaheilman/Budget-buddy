@@ -21,7 +21,7 @@ User.init(
         allowNull: false
       },
       monthly_income: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10,2),
         allowNull:false,    
         
         validate:{

@@ -12,7 +12,7 @@ Budget.init(
             autoIncrement: true
         },
         total:{
-            type:DataTypes.DECIMAL,
+            type:DataTypes.DECIMAL(10,2),
             allowNull:false,
             
         validate:{
@@ -21,7 +21,7 @@ Budget.init(
 
         },
         amountSpent:{
-            type:DataTypes.DECIMAL,
+            type:DataTypes.DECIMAL(10,2),
             allowNull:false,
             
         validate:{
@@ -30,7 +30,7 @@ Budget.init(
 
         },
         amountSaved:{
-            type:DataTypes.DECIMAL,
+            type:DataTypes.DECIMAL(10,2),
             allowNull:false,
             
         validate:{
@@ -39,7 +39,7 @@ Budget.init(
 
         },
         amountRemaining:{
-            type:DataTypes.DECIMAL,
+            type:DataTypes.DECIMAL(10,2),
             allowNull:false,
             
         validate:{
