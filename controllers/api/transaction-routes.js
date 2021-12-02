@@ -4,7 +4,7 @@ const { User, Transaction, Category } = require('../../models');
 // GET api/transaction
 router.get('/', (req, res) => {
     Transaction.findAll({
-      attributes: ['id', 'date', 'amount', 'memo_text'],
+      attributes: ['id', 'date', 'amount', 'memo'],
       include: [
         {
           model: User,
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'date', 'amount', 'memo_text'],
+      attributes: ['id', 'date', 'amount', 'memo'],
       include: [
         {
           model: User,
@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
       user_id: req.body.user_id,
       amount: req.body.amount,
       date: req.body.date,
-      memo_text: req.body.memo_text,
+      memo: req.body.memo,
       category_id: req.body.category_id
     })
       .then(dbTransactionData => res.json(dbTransactionData))
@@ -76,7 +76,7 @@ router.put('/:id', (req, res) => {
         user_id: req.body.user_id,
         amount: req.body.amount,
         date: req.body.date,
-        memo_text: req.body.memo_text,
+        memo: req.body.memo,
         category_id: req.body.category_id
       },
       {
