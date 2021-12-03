@@ -41,13 +41,9 @@ Transaction.init(
             len: [1]
           }
       },
-      category_id: {
-        type: DataTypes.INTEGER,
+      category: {
+        type: DataTypes.STRING,
         allowNull: false,
-        references: {
-          model: 'category',
-          key: 'id'
-        }
       }
     },
     {

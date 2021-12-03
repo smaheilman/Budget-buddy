@@ -1,18 +1,14 @@
 const router = require('express').Router();
-const { User, Transaction, Category } = require('../../models');
+const { User, Transaction } = require('../../models');
 
 // GET api/transaction
 router.get('/', (req, res) => {
     Transaction.findAll({
-      attributes: ['id', 'date', 'amount', 'memo'],
+      attributes: ['id', 'date', 'amount', 'memo', 'category'],
       include: [
         {
           model: User,
           attributes: ['username']
-        },
-        {
-          model: Category,
-          attributes: ['category_name']
         }
       ]
     })
@@ -29,15 +25,11 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'date', 'amount', 'memo'],
+      attributes: ['id', 'date', 'amount', 'memo', 'category'],
       include: [
         {
           model: User,
           attributes: ['username']
-        },
-        {
-          model: Category,
-          attributes: ['category_name']
         }
       ]
     })
@@ -61,7 +53,7 @@ router.post('/', (req, res) => {
       amount: req.body.amount,
       date: req.body.date,
       memo: req.body.memo,
-      category_id: req.body.category_id
+      category: req.body.category
     })
       .then(dbTransactionData => res.json(dbTransactionData))
       .catch(err => {
@@ -77,7 +69,7 @@ router.put('/:id', (req, res) => {
         amount: req.body.amount,
         date: req.body.date,
         memo: req.body.memo,
-        category_id: req.body.category_id
+        category: req.body.category
       },
       {
         where: {

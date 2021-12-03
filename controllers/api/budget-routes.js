@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Budget, Transaction, Category } = require('../../models');
+const { User, Budget, Transaction } = require('../../models');
 
 // GET api/budget
 router.get('/', (req, res) => {
@@ -13,13 +13,7 @@ router.get('/', (req, res) => {
           include: [
             {
               model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo'],
-              include: [
-                {
-                  model: Category,
-                  attributes: ['category_name']
-                }
-              ]
+              attributes: ['id', 'date', 'amount', 'memo', 'category']
             }
           ]
         }
@@ -46,13 +40,7 @@ router.get('/:id', (req, res) => {
           include: [
             {
               model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo'],
-              include: [
-                {
-                  model: Category,
-                  attributes: ['category_name']
-                }
-              ]
+              attributes: ['id', 'date', 'amount', 'memo', 'category']
             }
           ]
         }
