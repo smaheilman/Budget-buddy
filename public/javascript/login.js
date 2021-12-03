@@ -28,7 +28,7 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const monthlyIncome = document.querySelector('#monthly_income').value.trim();
+    const monthly_income = document.querySelector('#monthly_income').value.trim();
 
     if (username && email && password && monthlyIncome) {
         const response = await fetch('/api/user', {
@@ -37,7 +37,7 @@ async function signupFormHandler(event) {
                 username,
                 email,
                 password,
-                monthlyIncome
+                monthly_income
             }),
             headers: { 'Content-Type': 'application/json' }
         })
