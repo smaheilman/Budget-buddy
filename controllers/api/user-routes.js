@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User, Transaction, Income } = require('../../models');
+const { User, Transaction } = require('../../models');
 
-// GET /api/users
+// GET /api/user
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
     User.findAll({
@@ -14,14 +14,14 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/users/1
+// GET /api/user/1
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         include: [
           {
             model: Transaction,
-            attributes: ['id', 'amount', 'date', 'memo_text']
+            attributes: ['id', 'amount', 'date', 'memo', 'category']
           }
         ],
         where: {
@@ -41,14 +41,15 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST api/users
+// POST api/user
 router.post('/', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
       username: req.body.username,
+      monthly_income: req.body.monthly_income,
       email: req.body.email,
-      password: req.body.password,
-      //monthly_income: req.body.monthly_income
+      password: req.body.password
+      
     })
     .then(dbUserData => {
       req.session.save(() => {

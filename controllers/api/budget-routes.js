@@ -1,69 +1,44 @@
 const router = require('express').Router();
-const { User, Budget, Transaction, Income, Category } = require('../../models');
+const { User, Transaction } = require('../../models');
 
-// GET api/budget
+// GET api/transaction
 router.get('/', (req, res) => {
-    Budget.findAll({
-      attributes: ['id', 'total', 'amountSpent', 'amountSaved', 'amountRemaining'],
-      order: [['created_at', 'DESC']], 
+    Transaction.findAll({
+      attributes: ['id', 'date', 'amount', 'memo', 'category'],
       include: [
         {
           model: User,
-          attributes: ['username'],
-          include: [
-            {
-              model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo_text'],
-              include: [
-                {
-                  model: Category,
-                  attributes: ['category_name']
-                }
-              ]
-            }
-          ]
+          attributes: ['username']
         }
       ]
     })
-      .then(dbBudgetData => res.json(dbBudgetData))
+      .then(dbTransactionData => res.json(dbTransactionData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
 
-// GET api/budget/:id
+// GET api/transaction/:id
 router.get('/:id', (req, res) => {
-    Budget.findOne({
+    Transaction.findOne({
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'total', 'amountSpent', 'amountSaved', 'amountRemaining'],
+      attributes: ['id', 'date', 'amount', 'memo', 'category'],
       include: [
         {
           model: User,
-          attributes: ['username'],
-          include: [
-            {
-              model: Transaction,
-              attributes: ['id', 'date', 'amount', 'memo_text'],
-              include: [
-                {
-                  model: Category,
-                  attributes: ['category_name']
-                }
-              ]
-            }
-          ]
+          attributes: ['username']
         }
       ]
     })
-      .then(dbBudgetData => {
-        if (!dbBudgetData) {
-          res.status(404).json({ message: 'No Budget found with this id' });
+      .then(dbTransactionData => {
+        if (!dbTransactionData) {
+          res.status(404).json({ message: 'No Transaction found with this id' });
           return;
         }
-        res.json(dbBudgetData);
+        res.json(dbTransactionData);
       })
       .catch(err => {
         console.log(err);
@@ -72,15 +47,15 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects {BUDGETOBJECT}
-    Budget.create({
+    // expects {TransactionOBJECT}
+    Transaction.create({
       user_id: req.body.user_id,
-      total: req.body.total,
-      amountSpent: req.body.amountSpent,
-      amountSaved: req.body.amountSaved,
-      amountRemaining: req.body.amountRemaining
+      amount: req.body.amount,
+      date: req.body.date,
+      memo: req.body.memo,
+      category: req.body.category
     })
-      .then(dbBudgetData => res.json(dbBudgetData))
+      .then(dbTransactionData => res.json(dbTransactionData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -88,27 +63,26 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Budget.update(
+    Transaction.update(
       {
         user_id: req.body.user_id,
-        total: req.body.total,
-        amountSpent: req.body.amountSpent,
-        amountSaved: req.body.amountSaved,
-        amountRemaining: req.body.amountRemaining
+        amount: req.body.amount,
+        date: req.body.date,
+        memo: req.body.memo,
+        category: req.body.category
       },
       {
-        individualHooks: true,
         where: {
           id: req.params.id
         }
       }
     )
-      .then(dbBudgetData => {
-        if (!dbBudgetData) {
-          res.status(404).json({ message: 'No Budget found with this id' });
+      .then(dbTransactionData => {
+        if (!dbTransactionData) {
+          res.status(404).json({ message: 'No Transaction found with this id' });
           return;
         }
-        res.json(dbBudgetData);
+        res.json(dbTransactionData);
       })
       .catch(err => {
         console.log(err);
@@ -117,17 +91,17 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Budget.destroy({
+    Transaction.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(dbBudgetData => {
-        if (!dbBudgetData) {
-          res.status(404).json({ message: 'No Budget found with this id' });
+      .then(dbTransactionData => {
+        if (!dbTransactionData) {
+          res.status(404).json({ message: 'No Transaction found with this id' });
           return;
         }
-        res.json(dbBudgetData);
+        res.json(dbTransactionData);
       })
       .catch(err => {
         console.log(err);

@@ -3,23 +3,31 @@
 
     <form class="new-transaction-form">
         <div>
-            <label for="title">Transaction Title</label>
-            <input type="string" id="transaction-title" name="transaction-title" />
+            <label for="memo">Transaction Memo</label>
+            <input type="string" id="transaction-memo" name="transaction-memo" />
         </div>
         <div>
             <label for="amount">How much was spent?</label>
-            <input type="number" id="transaction-amount" name="transaction-amount" />
+            <input type="integer" id="transaction-amount" name="transaction-amount" />
         </div>
         <div>
-            <label for="categories">Choose a category:</label>
+            <label for="date">Date of Transaction</label>
+            <input type="date" id="transaction-date" name="transaction-date"/>
+        </div>
+        <div>
+            <label for="category">Choose a category:</label>
 
-            <select name="transaction-category" id="transaction-category">
-                <option value="bills">Bills/Utilities</option>
-                <option value="shopping">Shopping</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="other">Other</option>
+            <!--<input type="string" name="transaction-category" id="transaction-category"/>-->
+
+           <select >
+                <option type="string" value="Bills/Utilities">Bills/Utilities</option>
+                <option type="string" value="Shopping">Shopping</option>
+                <option type="string" value="Entertainment">Entertainment</option>
+                <option type="string" value="Other">Other</option>
             </select>
         </div>
         <button type="submit" class="btn">Add</button>
     </form>
 </section>
+
+<script src="/javascript/transaction.js"></script>

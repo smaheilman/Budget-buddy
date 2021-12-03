@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         },
         attributes: [
             'id',
-            'title',
+            'memo',
             'created_at',
         ],
         include: [
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: Budget,
-                attributes: ['budget']
+                attributes: ['total']
             }
         ]
     })
@@ -37,3 +37,5 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+module.exports = router;
