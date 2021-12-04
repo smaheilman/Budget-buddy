@@ -37,7 +37,8 @@ User.init(
       },
       monthly_income: {
           type: DataTypes.DECIMAL(10,2),
-          allowNull: false,
+          allowNull: true,
+          defaultValue: 0,
       }
     },
     {

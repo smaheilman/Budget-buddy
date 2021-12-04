@@ -90,7 +90,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  console.log('id', req.params.id)
+  ci
     Transaction.destroy({
       where: {
         id: req.params.id

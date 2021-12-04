@@ -1,16 +1,14 @@
-<h2> Welcome to your profile {{this.transaction.0.user.username}}!</h2>
+<h2> Welcome to your profile {{this.user.0.username}}</h2>
 <section>
     <h2>Budget</h2>
-    <div>
-        ${{this.transaction.0.user.monthly_income}}
-
-    </div>
-   
-    {{#if transaction.length}}
+    ${{this.user.0.monthly_income}}
+    {{log this.user.0.username}}
+    {{log this.user.0.transactions}}
+    {{#if this.user.0.transactions.length}}
     <section>
         <h2>Your Transactions</h2>
         <ol class="transaction-list">
-            {{#each transaction}}
+            {{#each user.0.transactions}}
             <li>
                 <div class="meta">
                     <a href="/profile/edit/{{id}}">{{memo}}</a>
@@ -40,5 +38,4 @@
 <button type="button" class="destroyTransaction">Delete transaction</button>
 </div>
 
-<!--<script src="/javascript/transaction.js"></script>
-<script src="/javascript/login.js"></script>-->
+<!--<script src="/javascript/profile.js"></script>-->

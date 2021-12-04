@@ -2,49 +2,55 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Budget, User, Transaction } = require('../models');
 
+//router.get('/', (req, res) => {
+//    User.findAll({
+//        where: {
+//            id: req.session.id
+//        },              
+//        attributes: [
+//            'username',
+//            'email',
+//            'monthly_income'
+//        ]
+//    });
+//    
+//});
+
 router.get('/', (req, res) => {
-    console.log(req.session);
-    console.log('======================');
-    Transaction.findAll({
+    //console.log(req.session);
+    //console.log('======================');
+    console.log("user stuff");
+    User.findAll({
         where: {
-            user_id: req.session.user_id
+            username: req.session.username
         },
         attributes: [
             'id',
-            'amount',
-            'date',
-            'memo',
-            'category'
+            'username',
+            'monthly_income',
+            'email',
+            'password'
         ],
         include: [
             {
-                model: User,
-                attributes: ['username', 'monthly_income']
+                model: Transaction,
+                attributes: [ 'id', 'user_id', 'amount', 'date', 'memo', 'category'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
-        .then(dbTransactionData => {
-            const transaction = dbTransactionData.map(transaction => transaction.get({ plain: true }));
-            console.log("this is trans data", dbTransactionData[0].dataValues.user.dataValues.username)
-            res.render('profile', { transaction, loggedIn: true });
+        .then(dbUserData => {
+            const user = dbUserData.map(user => user.get({ plain: true }));
+            res.render('profile', { user, loggedIn: true });
+            console.log(dbUserData);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-});
-
-router.get('/', (req, res) => {
-    User.findAll({
-        where: {
-            id: req.session.id
-        },
-        attributes: [
-            'username',
-            'email',
-            'monthly_income'
-        ]
-    });
 });
 
 router.get('/edit/:id', (req, res) => {

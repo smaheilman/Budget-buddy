@@ -1,32 +1,22 @@
-async function newFormHandler(event) {
-    event.preventDefault();
-    console.log(document.querySelector('select[name="transaction-category'))
-
-    const monthly_income = document.querySelector('input[name="monthly_income"]')
-
-    const memo = document.querySelector('input[name="transaction-memo"]').value;
-    const amount = document.querySelector('input[name="transaction-amount"]').value;
-    const category = document.querySelector('select[name="transaction-category').value;
-    const date = document.querySelector('input[name="transaction-date').value;
-
-    const response = await fetch(`/api/budget`, {
-        method: 'POST',
-        body: JSON.stringify({
-            total, amount-monthly_income
-            amountSpent,
-            amountSaved,
-            amountRemaining
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    if (response.ok) {
-        document.location.replace('/profile');
-    } else {
-        alert(response.statusText);
-    }
-}
-
-document.querySelector('.new-transaction-form').addEventListener('submit', newFormHandler);
+//async function signupFormHandler(event) {
+//    event.preventDefault();
+//
+//    const monthly_income = document.querySelector('#monthly_income').value.trim();
+//
+//    if (monthly_income) {
+//        const response = await fetch('/api/user', {
+//            method: 'post',
+//            body: JSON.stringify({
+//                monthly_income
+//            }),
+//            headers: { 'Content-Type': 'application/json' }
+//        })
+//        console.log(response)
+//
+//        if (response.ok) {
+//            console.log(monthly_income);
+//        } else {
+//            alert(response.statusText);
+//        }
+//    }
+//}
