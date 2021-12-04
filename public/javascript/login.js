@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            console.log({response});
+            console.log(response);
             console.log
             document.location.replace('/profile');
             

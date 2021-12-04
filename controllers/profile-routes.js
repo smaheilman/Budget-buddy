@@ -24,6 +24,7 @@ router.get('/', (req, res) => {
   })
     .then(dbTransactionData => {
       const transaction = dbTransactionData.map(transaction => transaction.get({ plain: true }));
+      console.log("this is trans data", dbTransactionData[0].dataValues.user.dataValues.username)
       res.render('profile', { transaction, loggedIn: true });
     })
     .catch(err => {
@@ -32,6 +33,18 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get ('/', (req, res) => {
+    User.findAll({
+        where: {
+            id: req.session.id
+        },
+        attributes: [
+            'username',
+            'email',
+            'monthly_income'
+        ]
+    });
+});
 //router.get('/edit/:id', withAuth, (req, res) => {
 //  Post.findByPk(req.params.id, {
 //    attributes: [
