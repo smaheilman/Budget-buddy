@@ -3,6 +3,7 @@ const User = require("./User");
 const Transaction = require("./Transaction");
 const Budget = require("./Budget");
 
+
 User.hasMany(Transaction, {
     foreignkey: 'user_id'
 });
@@ -27,4 +28,4 @@ Transaction.belongsTo(Budget, {
     foreignKey: 'transaction_id'
 });
 
-module.exports = { User, Transaction, Budget };
+module.exports = { User, Transaction, Budget};
