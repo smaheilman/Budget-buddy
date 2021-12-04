@@ -2,8 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Budget, User, Transaction } = require('../models');
 
-
-// get all posts for dashboard
 router.get('/', (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -20,7 +18,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'monthly_income']
       }
     ]
   })

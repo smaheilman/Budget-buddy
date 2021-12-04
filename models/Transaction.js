@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Transaction extends Model{}
 
+
 Transaction.init(
     {
       id: {
@@ -22,7 +23,7 @@ Transaction.init(
       user_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'user',
+          model: 'User',
           key: 'id'
         }
       },

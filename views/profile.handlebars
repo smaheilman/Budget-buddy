@@ -1,15 +1,21 @@
-<div>Hello!</div>
-
+<h2> Welcome to your profile!</h2>
 <section>
     <h2>budget</h2>
-    <div>{{monthly_income}}</div>
-    <ol class="transaction-list">
-        <li>
-            <div>
-                {{memo}} {{amount}} {{date}} {{category}}
-            </div>
-        </li>
-    </ol>
+    <!--<div>{{monthly_income}}</div>-->
+    {{#if transaction.length}}
+    <section>
+        <h2>Your Transactions</h2>
+        <ol class="transaction-list">
+            {{#each transaction}}
+            <li>
+                <div class="meta">
+                    {{transaction.memo}} {{transaction.amount}} {{transaction.date}} {{transaction.category}}
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+    </section>
+    {{/if}}
     <div>
         **Pie chart**
     </div>

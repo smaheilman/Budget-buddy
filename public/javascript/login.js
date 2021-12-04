@@ -15,7 +15,10 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
+            console.log({response});
+            console.log
             document.location.replace('/profile');
+            
         } else {
             alert(response.statusText);
         }
@@ -30,7 +33,7 @@ async function signupFormHandler(event) {
     const password = document.querySelector('#password-signup').value.trim();
     const monthly_income = document.querySelector('#monthly_income').value.trim();
 
-    if (username && email && password && monthlyIncome) {
+    if (username && email && password && monthly_income) {
         const response = await fetch('/api/user', {
             method: 'post',
             body: JSON.stringify({
@@ -38,6 +41,7 @@ async function signupFormHandler(event) {
                 email,
                 password,
                 monthly_income
+            
             }),
             headers: { 'Content-Type': 'application/json' }
         })

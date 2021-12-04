@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Budget, User, Transaction } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('homepage');
@@ -15,10 +16,6 @@ router.get('/login', (req, res) => {
 
 router.get('/transaction', (req, res) =>{
     res.render('transaction');
-});
-
-router.get('/profile', (req, res) =>{
-    res.render('profile');
 });
 
 module.exports = router;

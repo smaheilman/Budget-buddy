@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // expects {TransactionOBJECT}
     Transaction.create({
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
       amount: req.body.amount,
       date: req.body.date,
       memo: req.body.memo,
