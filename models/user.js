@@ -20,14 +20,6 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      monthly_income: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull:false,    
-        
-        validate:{
-          isDecimal:true,
-        }
-      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -42,7 +34,15 @@ User.init(
         validate: {
           len: [4] //PASSWORD LENGTH
         }
-      }
+      },
+      monthly_income: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull:false,    
+        
+        validate:{
+          isDecimal:true,
+        }
+      },
     },
     {
         hooks: {
