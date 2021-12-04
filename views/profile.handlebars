@@ -1,10 +1,19 @@
 <h2> Welcome to your profile {{this.user.0.username}}</h2>
 <section>
     <h2>Budget</h2>
+<<<<<<< HEAD
     ${{this.user.0.monthly_income}}
     {{log this.user.0.username}}
     {{log this.user.0.transactions}}
     {{#if this.user.0.transactions.length}}
+=======
+    <div>
+        ${{this.transaction.0.user.monthly_income}}
+    {{log this}}
+    </div>
+   
+    {{#if transaction.length}}
+>>>>>>> 39fd00378f7658e6ddc9b6c702823b888b73f563
     <section>
         <h2>Your Transactions</h2>
         <ol class="transaction-list">

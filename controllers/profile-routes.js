@@ -42,10 +42,16 @@ router.get('/', (req, res) => {
             }
         ]
     })
+<<<<<<< HEAD
         .then(dbUserData => {
             const user = dbUserData.map(user => user.get({ plain: true }));
             res.render('profile', { user, loggedIn: true });
             console.log(dbUserData);
+=======
+        .then(dbTransactionData => {
+            const transaction = dbTransactionData.map(transaction => transaction.get({ plain: true }));
+            res.render('profile', { transaction, loggedIn: true });
+>>>>>>> 39fd00378f7658e6ddc9b6c702823b888b73f563
         })
         .catch(err => {
             console.log(err);
@@ -53,6 +59,30 @@ router.get('/', (req, res) => {
         });
 });
 
+<<<<<<< HEAD
+=======
+// router.get('/', (req, res) => {
+//     User.findAll({
+//         where: {
+//             id: req.session.id
+//         },
+//         attributes: [
+//             'username',
+//             'email',
+//             'monthly_income'
+//         ]
+//     }).then(dbUserData => {
+//         const user = dbUserData.map(User => User.get({ plain: true }));
+//         console.log("this is user data", dbUserData)
+//         res.render('profile', { user, loggedIn: true });
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// });
+
+>>>>>>> 39fd00378f7658e6ddc9b6c702823b888b73f563
 router.get('/edit/:id', (req, res) => {
     Transaction.findByPk(req.params.id, {
         attributes: [
