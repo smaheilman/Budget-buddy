@@ -5,20 +5,31 @@
     </h2>
     <form class="edit-transaction-form">
         <div>
-            <input name="post-title" type="text" value="{{post.title}}" />
-            <span>({{format_url post.post_url}})</span>
+            <label for="memo">Transaction Memo</label>
+            <input type="string" id="transaction-memo" name="transaction-memo" value="{{transaction.memo}}"/>
         </div>
         <div>
-            {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
-            |
-            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            <label for="amount">How much was spent?</label>
+            <input type="integer" id="transaction-amount" name="transaction-amount" value="{{transaction.amount}}"/>
+        </div>
+        <div>
+            <label for="date">Date of Transaction</label>
+            <input type="date" id="transaction-date" name="transaction-date" value="{{transaction.date}}" />
+        </div>
+        <div>
+            <label for="category">Choose a category:</label>
+
+            <select name="transaction-category" id="transaction-category">
+                <option type="string" value="Bills/Utilities">Bills/Utilities</option>
+                <option type="string" value="Shopping">Shopping</option>
+                <option type="string" value="Entertainment">Entertainment</option>
+                <option type="string" value="Other">Other</option>
+            </select>
         </div>
         <button type="submit">Save Transaction</button>
         <button type="button" class="delete-tranaction-btn">Delete Transaction</button>
     </form>
 </article>
 
-
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/edit-transaction.js"></script>
+<script src="/javascript/delete-transaction.js"></script>

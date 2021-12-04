@@ -65,7 +65,6 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Transaction.update(
       {
-        user_id: req.body.user_id,
         amount: req.body.amount,
         date: req.body.date,
         memo: req.body.memo,
@@ -91,6 +90,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
+  console.log('id', req.params.id)
     Transaction.destroy({
       where: {
         id: req.params.id

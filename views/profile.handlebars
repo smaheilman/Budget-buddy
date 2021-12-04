@@ -1,9 +1,9 @@
-<h2> Welcome to your profile!</h2>
+<h2> Welcome to your profile {{this.transaction.0.user.username}}!</h2>
 <section>
-    <h2>budget</h2>
+    <h2>Budget</h2>
     <div>
-        {{log this.transaction.0.user}}
-        {{this.transaction.0.user.monthly_income}}
+        ${{this.transaction.0.user.monthly_income}}
+
     </div>
    
     {{#if transaction.length}}
@@ -13,7 +13,11 @@
             {{#each transaction}}
             <li>
                 <div class="meta">
-                    <p>{{memo}}</p> {{transaction.amount}} {{transaction.date}} {{transaction.category}}
+                    <a href="/profile/edit/{{id}}">{{memo}}</a>
+                    {{log id}}
+                    <p>How much: ${{amount}}</p> 
+                    <p>Date of transaction: {{format_date date}}</p> 
+                    <p>Category: {{category}}</p>
                 </div>
             </li>
             {{/each}}

@@ -17,6 +17,8 @@ const exphbs = require('express-handlebars');
 // const helpers = require('./utils/helpers');
 // const hbs = exphbs.create({ helpers });
 
+const helpers = require('./utils/helpers');
+
 const sess = {
   secret: 'Super duper duper secret',
   cookie: {},
@@ -30,7 +32,7 @@ const sess = {
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);
