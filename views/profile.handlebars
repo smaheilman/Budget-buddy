@@ -26,13 +26,18 @@
             {{#each user.0.transactions}}
             <li>
                 <div class="meta">
-                    <a href="/profile/edit/{{id}}">{{memo}}</a>
+                    <p>{{memo}}</p>
                     <p>How much: ${{amount}}</p> 
                     <p>Date of transaction: {{format_date date}}</p> 
                     <p>Category: {{category}}</p>
                     {{log amount}}
                 </div>
             </li>
+            <div>
+                <a href="/profile/edit/{{id}}">
+                    <button type="button">Edit transaction</button>
+                </a>
+            </div>
             {{/each}}
         </ol>  
         

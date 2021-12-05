@@ -3,8 +3,8 @@ async function editFormHandler(event) {
 
     const memo = document.querySelector('input[name="transaction-memo"]').value.trim();
     const amount = document.querySelector('input[name="transaction-amount"]').value.trim();
-    const date = document.querySelector('input[name="transactoin-date"]').value;
-    const category = document.querySelector('input[name="transactoin-category"]').value;
+    const date = document.querySelector('input[name="transaction-date"]').value;
+    const category = document.querySelector('select[name="transaction-category"]').value;
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
