@@ -13,8 +13,10 @@
             <input type="integer" id="transaction-amount" name="transaction-amount" value="{{transaction.amount}}"/>
         </div>
         <div>
-            <label for="date">Date of Transaction</label>
+            <p>Previous Date of Transaction: {{transaction.date}}</p>
+            <label for="date">New Date of Transaction</label>
             <input type="date" id="transaction-date" name="transaction-date" value="{{transaction.date}}" />
+            
         </div>
         <div>
             <label for="category">Choose a category:</label>
