@@ -2,9 +2,13 @@
 <section>
     <h2>Budget</h2>
     <div>
-        ${{this.user.0.monthly_income}}
-        <button type="button" class="edit-income" id="modal-btn">Edit Income</button>
-        <div id="myModal" class="modal">
+        <form class="edit-income-form">
+            ID: <div class="incomeId">{{this.user.0.id}}</div>
+            <label>Monthly Income</label>
+            $<input type="number" step="0.01" id="monthly_income" name="monthly_income" value="{{this.user.0.monthly_income}}"/>
+            <button type="submit" class="edit-income-btn">Edit Income</button>
+        </form>
+        {{!-- <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
                 <form class="edit-income-form">
@@ -16,7 +20,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     {{#if user.0.transactions.length}}

@@ -108,12 +108,19 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// PUT /api/users/1
+// PUT /api/user/1
 router.put('/:id', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   
     // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
-    User.update(req.body, {
+    User.update(
+      {
+        monthly_income: req.body.monthly_income,
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+      },
+       {
         individualHooks: true,
         where: {
             id: req.params.id
@@ -132,7 +139,7 @@ router.put('/:id', (req, res) => {
       });
 });
 
-// DELETE /api/users/1
+// DELETE /api/user/1
 router.delete('/:id', (req, res) => {
     User.destroy({
       where: {
