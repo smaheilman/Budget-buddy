@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Budget extends Model {}
+class Budget extends Model{}
 
 Budget.init(
     {
@@ -11,47 +11,47 @@ Budget.init(
             primaryKey: true,
             autoIncrement: true
         },
-        total: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
-
-            validate: {
-                isDecimal: true,
-            }
-
-        },
-        amountSpent: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
-
-            validate: {
-                isDecimal: true,
-            }
+        total:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
 
         },
-        amountSaved: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
-
-            validate: {
-                isDecimal: true,
-            }
+        amountSpent:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
 
         },
-        amountRemaining: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
+        amountSaved:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
 
-            validate: {
-                isDecimal: true,
-            }
+        },
+        amountRemaining:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
 
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
-                key: 'id'
+              model: 'user',
+              key: 'id'
             }
         }
     },

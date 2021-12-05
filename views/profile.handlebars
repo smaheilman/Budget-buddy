@@ -2,8 +2,22 @@
 <section>
     <h2>Budget</h2>
     <div>
+        {{log this.user.0.id}}
         ${{this.user.0.monthly_income}}
-        {{log this.user.0.monthly_income}}
+        <button type="button" class="edit-income" id="modal-btn">Edit Income</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <form class="edit-income-form">
+                    <div>
+                        <div class="incomeId">{{this.user.0.id}}</div>
+                        <label for="monthly_income">Monthly Income:</label>
+                        <input type="number" id="monthly_income" name="monthly_income" value="{{user.0.monthly_income}}"/>
+                        <button type="submit" class="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
    
     {{#if user.0.transactions.length}}
@@ -29,15 +43,8 @@
     </div>
 </section>
 <div>
-    <button type="button">Edit Income</button>
+    <a href="/transaction">
+        <button type="button">Add transaction</button>
+    </a>
 </div>
-<div>
-    <button type="button">Edit Transaction</button>
-</div>
-<a href="/transaction">
-    <button type="button">Add transaction</button>
-</a>
-<button type="button" class="destroyTransaction">Delete transaction</button>
-</div>
-
-<!--<script src="/javascript/profile.js"></script>-->
+<script src="/javascript/edit-income.js"></script>

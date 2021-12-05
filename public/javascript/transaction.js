@@ -30,15 +30,6 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 
-    //const responseTwo = await fetch(`/api/budget`, {
-    //    method:'POST',
-    //    body: JSON.stringify({
-    //        total,
-    //        amountSpent,
-    //        amountSaved,
-    //        amountRemaining
-    //    })
-    //})
 }
 
 document.querySelector('.new-transaction-form').addEventListener('submit', newFormHandler);

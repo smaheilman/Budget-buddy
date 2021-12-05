@@ -5,11 +5,7 @@ const { User, Transaction } = require('../../models');
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
     User.findAll({
-        attributes: { exclude: ['password'],
-        include: [{
-            model: Transaction,
-            attributes: ['id', 'user_id', 'date', 'amount', 'memo', 'category']
-        }] }
+        attributes: { exclude: ['password']}
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
