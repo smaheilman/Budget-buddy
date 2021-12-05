@@ -11,21 +11,48 @@ Budget.init(
             primaryKey: true,
             autoIncrement: true
         },
+        total:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountSpent:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountSaved:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
+        amountRemaining:{
+            type:DataTypes.DECIMAL,
+            allowNull:false,
+            
+        validate:{
+            isDecimal:true,
+          }
+
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
               model: 'user',
               key: 'id'
             }
-        },
-        income_amount: {
-            type: DataTypes.DECIMAL
-        },
-        transaction_amount: {
-            type: DataTypes.DECIMAL
-        },
-        date: {
-            type: DataTypes.DATE
         }
     },
     {

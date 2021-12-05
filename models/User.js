@@ -34,6 +34,11 @@ User.init(
         validate: {
           len: [4] //PASSWORD LENGTH
         }
+      },
+      monthly_income: {
+          type: DataTypes.DECIMAL(10,2),
+          allowNull: true,
+          defaultValue: 0,
       }
     },
     {

@@ -1,0 +1,67 @@
+<h2> Welcome to your profile {{this.user.0.username}}</h2>
+<section>
+    <h2>Budget</h2>
+    <div>
+        <form class="edit-income-form">
+            ID: <div class="incomeId">{{this.user.0.id}}</div>
+            <label>Monthly Income</label>
+            $<input type="number" step="0.01" id="monthly_income" name="monthly_income" value="{{this.user.0.monthly_income}}"/>
+            <button type="submit" class="edit-income-btn">Edit Income</button>
+        </form>
+        {{!-- <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <form class="edit-income-form">
+                    <div>
+                        <div class="incomeId">{{this.user.0.id}}</div>
+                        <label for="monthly_income">Monthly Income:</label>
+                        <input type="number" id="monthly_income" name="monthly_income" value="{{user.0.monthly_income}}"/>
+                        <button type="submit" class="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div> --}}
+    </div>
+
+    {{#if user.0.transactions.length}}
+    <section>
+        <h2>Your Transactions</h2>
+        <ol class="transaction-list">
+            {{#each user.0.transactions}}
+            <li>
+                <div class="meta">
+                    <p>{{memo}}</p>
+                    <p>How much:</p> 
+                    <div class="trans-{{@index}}">${{amount}}</div>
+                    <p>Date of transaction: {{format_date date}}</p> 
+                    <p>Category: {{category}}</p>
+                    {{log amount}}
+                </div>
+            </li>
+            <div>
+                <a href="/profile/edit/{{id}}">
+                    <button type="button">Edit transaction</button>
+                </a>
+            </div>
+            {{/each}}
+        </ol> 
+    </section>
+    {{/if}}
+
+    <div>
+        <a href="/transaction">
+            <button type="button">Add transaction</button>
+        </a>
+    </div>
+</section>
+
+<div class="pie-chart">
+    **Pie chart**
+</div>
+<div class="stats">
+    {{#each user.0.transactions}}
+        {{amount}}
+    {{/each}}
+</div>
+
+<script src="/javascript/edit-income.js"></script>
