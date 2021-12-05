@@ -9,7 +9,7 @@ async function incomeFormHandler(event) {
         body: JSON.stringify({
             monthly_income
         }),
-        hearders: {
+        headers: {
             'Content-Type': 'application/json'
         }
     });

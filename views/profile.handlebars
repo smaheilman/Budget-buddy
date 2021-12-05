@@ -31,7 +31,8 @@
             <li>
                 <div class="meta">
                     <p>{{memo}}</p>
-                    <p>How much: ${{amount}}</p> 
+                    <p>How much:</p> 
+                    <div class="trans-{{@index}}">${{amount}}</div>
                     <p>Date of transaction: {{format_date date}}</p> 
                     <p>Category: {{category}}</p>
                     {{log amount}}
@@ -43,18 +44,24 @@
                 </a>
             </div>
             {{/each}}
-        </ol>  
-        
+        </ol> 
     </section>
     {{/if}}
-     
+
     <div>
-        **Pie chart**
+        <a href="/transaction">
+            <button type="button">Add transaction</button>
+        </a>
     </div>
 </section>
-<div>
-    <a href="/transaction">
-        <button type="button">Add transaction</button>
-    </a>
+
+<div class="pie-chart">
+    **Pie chart**
 </div>
+<div class="stats">
+    {{#each user.0.transactions}}
+        {{amount}}
+    {{/each}}
+</div>
+
 <script src="/javascript/edit-income.js"></script>

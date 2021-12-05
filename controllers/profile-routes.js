@@ -27,9 +27,28 @@ const { Budget, User, Transaction } = require('../models'); router.get('/', (req
         ]
     })
         .then(dbUserData => {
-            const user = dbUserData.map(user => user.get({ plain: true }));
+            let user = dbUserData.map(user => user.get({ plain: true }));
+            // let entAmount = [];
+            // let buAmount = [];
+            // let shopAmount = [];
+            // let otherAmount = [];
+            // const reducer = (prev, current) => parseInt(prev) + parseInt(current);
+            // // logic here to update user object
+            // user[0].transactions.map( (item) => {
+            //     if (item.category === "Entertainment") {
+            //         entAmount.push(item.amount)
+            //     }
+            //     // if (item.category === "") {}
+            //     // if (item.category === "") {}
+            // })
+
+            // entAmount = entAmount.reduce(reducer)
+
+            // let newUser = ({...user[0], entertainment: entAmount, });
+            // console.log(newUser)
+
             res.render('profile', { user, loggedIn: true });
-            console.log(dbUserData);
+            
         })
         .catch(err => {
             console.log(err);
