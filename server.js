@@ -8,6 +8,7 @@ const path = require('path');
 // npm i express-session connect-session-sequelize
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+<<<<<<< HEAD
 
 //MIGHT USE THESE LATER
 // // npm i handlebars, npm i express-handlebars
@@ -28,6 +29,33 @@ const sess = {
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+=======
+const exphbs = require('express-handlebars');
+
+//MIGHT USE THESE LATER
+// // npm i handlebars, npm i express-handlebars
+// const exphbs = require('express-handlebars');
+// //imports handlebar helpers
+// const helpers = require('./utils/helpers');
+// const hbs = exphbs.create({ helpers });
+
+const helpers = require('./utils/helpers');
+
+const sess = {
+  secret: 'Super duper duper secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+const hbs = exphbs.create({helpers});
+>>>>>>> 9b9100d86be2fe726d84f09b8841ca4d826c1bff
 
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);

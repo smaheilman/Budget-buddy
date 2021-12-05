@@ -18,6 +18,7 @@
     "url": "https://github.com/smaheilman/Budget-buddy/issues"
   },
   "homepage": "https://github.com/smaheilman/Budget-buddy#readme",
+<<<<<<< HEAD
   "dependencies": {},
   "devDependencies": {
     "connect-session-sequelize": "^7.1.2",
@@ -25,5 +26,21 @@
     "express-session": "^1.17.2",
     "path": "^0.12.7",
     "sequelize": "^6.12.0-alpha.1"
+=======
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "chart.js": "^3.6.2",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-alpha.1"
+  },
+  "devDependencies": {
+    "alinex-handlebars": "^1.2.2",
+    "handlebars-helpers": "^0.10.0"
+>>>>>>> 9b9100d86be2fe726d84f09b8841ca4d826c1bff
   }
 }
