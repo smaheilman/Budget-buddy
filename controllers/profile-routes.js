@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Budget, User, Transaction } = require('../models'); router.get('/', (req, res) => {
+const { Budget, User, Transaction } = require('../models'); 
+const withAuth = require('../utils/auth');
+
+router.get('/', withAuth, (req, res) => {
     //console.log(req.session);
     //console.log('======================');
     // console.log("user stuff");
@@ -70,7 +73,7 @@ const { Budget, User, Transaction } = require('../models'); router.get('/', (req
         });
 })
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Transaction.findByPk(req.params.id, {
         attributes: [
             'id',
