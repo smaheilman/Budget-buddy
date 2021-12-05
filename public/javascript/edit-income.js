@@ -15,7 +15,7 @@ async function incomeFormHandler(event) {
     });
 
     if (response.ok) {
-        console.log(incomeId)
+        //console.log(incomeId)
     } else {
         alert(response.statusText);
     }

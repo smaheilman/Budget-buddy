@@ -2,7 +2,6 @@
 <section>
     <h2>Budget</h2>
     <div>
-        {{log this.user.0.id}}
         ${{this.user.0.monthly_income}}
         <button type="button" class="edit-income" id="modal-btn">Edit Income</button>
         <div id="myModal" class="modal">
@@ -19,7 +18,7 @@
             </div>
         </div>
     </div>
-   
+
     {{#if user.0.transactions.length}}
     <section>
         <h2>Your Transactions</h2>
@@ -28,16 +27,18 @@
             <li>
                 <div class="meta">
                     <a href="/profile/edit/{{id}}">{{memo}}</a>
-                    {{log id}}
                     <p>How much: ${{amount}}</p> 
                     <p>Date of transaction: {{format_date date}}</p> 
                     <p>Category: {{category}}</p>
+                    {{log amount}}
                 </div>
             </li>
             {{/each}}
-        </ol>
+        </ol>  
+        
     </section>
     {{/if}}
+     
     <div>
         **Pie chart**
     </div>
