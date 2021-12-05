@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Budget, User, Transaction } = require('../models'); router.get('/', (req, res) => {
     //console.log(req.session);
     //console.log('======================');
-    console.log("user stuff");
+    // console.log("user stuff");
     User.findAll({
         where: {
             username: req.session.username
@@ -28,26 +28,40 @@ const { Budget, User, Transaction } = require('../models'); router.get('/', (req
     })
         .then(dbUserData => {
             let user = dbUserData.map(user => user.get({ plain: true }));
-            // let entAmount = [];
-            // let buAmount = [];
-            // let shopAmount = [];
-            // let otherAmount = [];
-            // const reducer = (prev, current) => parseInt(prev) + parseInt(current);
-            // // logic here to update user object
-            // user[0].transactions.map( (item) => {
-            //     if (item.category === "Entertainment") {
-            //         entAmount.push(item.amount)
-            //     }
-            //     // if (item.category === "") {}
-            //     // if (item.category === "") {}
-            // })
+            let entAmount = [0];
+            let buAmount = [0];
+            let shopAmount = [0];
+            let otherAmount = [0];
+            const reducer = (prev, current) => parseInt(prev) + parseInt(current);
+                
+            // logic here to update user object
+            user[0].transactions.map( (item) => {
+                if (item.category === "Entertainment") {
+                    entAmount.push(item.amount)  
+                }
+                if (item.category === "Bills/Utilities") {
+                    buAmount.push(item.amount)
+                }
+                if (item.category === "Shopping") {
+                    shopAmount.push(item.amount)
+                }
+                if (item.category === "Other") {
+                    otherAmount.push(item.amount)
+                }
 
-            // entAmount = entAmount.reduce(reducer)
+            })
 
-            // let newUser = ({...user[0], entertainment: entAmount, });
-            // console.log(newUser)
+            entAmount = entAmount.reduce(reducer);
+            buAmount = buAmount.reduce(reducer);
+            shopAmount = shopAmount.reduce(reducer);
+            otherAmount = otherAmount.reduce(reducer);
+            let transAmount = buAmount + entAmount + shopAmount + otherAmount;
 
-            res.render('profile', { user, loggedIn: true });
+            let totals = [({ transTotal: transAmount, buTotal: buAmount, entTotal: entAmount, shopTotal: shopAmount, otherTotal: otherAmount })];
+            console.log(totals);
+            
+
+            res.render('profile', { totals, user, loggedIn: true });
             
         })
         .catch(err => {

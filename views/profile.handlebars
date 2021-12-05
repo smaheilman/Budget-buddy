@@ -59,9 +59,11 @@
     **Pie chart**
 </div>
 <div class="stats">
-    {{#each user.0.transactions}}
-        {{amount}}
-    {{/each}}
+    {{totals.0.transTotal}}
+    {{totals.0.buTotal}}
+    {{totals.0.entTotal}}
+    {{totals.0.shopTotal}}
+    {{totals.0.otherTotal}}
 </div>
 
 <script src="/javascript/edit-income.js"></script>
