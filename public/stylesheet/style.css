@@ -5,9 +5,20 @@
 }
 * {
     box-sizing: border-box;
-    /*border:black 1px solid;*/
+    font-family: 'Noto Sans', sans-serif;
+}
+.dir-btn:hover {
+    cursor: pointer;
+}
+#animation-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--primary-color);
 }
 .button {
+    font-size: .8em;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +50,7 @@ header {
     text-align: left;
     display: flex;
     align-items: center;
+    height: 80px;
 }
 header h1 {
     font-size: 3em;
@@ -65,39 +77,38 @@ body, html {
     padding-bottom: 30px;
 }
 
+.handlebar-container {
+    height: calc(100vh - 140px);
+}
 
-
-.homepage{
+.handlebar-container{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4em;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-.homepage div {
+.handlebar-container div {
     padding: 0 3em;
 }
-.homepage h2 {
+.handlebar-container h2 {
     font-family: 'Noto Sans', sans-serif;
+    font-size: 1.6em;
 }
-.homepage div p {
+.handlebar-container div p {
     font-size: 1.3em;
     color: rgb(61, 61, 61);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 footer{
-    position: absolute;
     width: 100%;
-    height: 40px;
-    bottom: 0;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 20px;
-    margin-top: 40px;    
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    height: 40px;
+    height: 60px;
+    background-color: rgb(92, 204, 27);
+    color: white;  
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    font-size: 1.1em;
 }
 
 textarea, input {
@@ -144,144 +155,7 @@ form label {
     color: darkgray;
 }
 
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
 
 .signup-form, .login-form{
     display: inline;
-}
-
-.login, .signup{
-    display: block;
-    margin: auto;
-    padding: 20px;
-    width: 500px;
-    justify-content: center;
-    font-size: 20px;
-}
-
-#login-btn, #signup-btn{
-    margin-top: 10px;
-    background-color:black;
-    color: antiquewhite;
-    border-radius: 7px;
-    width: 500px;
-}
-
-#login-btn:hover{
-    background-color: dimgrey;
-    color:springgreen;
-}
-
-#signup-btn:hover{
-    background-color:springgreen;
-    color: dimgray;
-}
-
-.intro{
-    margin-top: 20px;
-    text-align: center;
-    font-size: 30px;
-    height: 50px;
-}
-
-.budget{
-    text-align: center;
-    background-color: red;
-    color: white;
-    margin-top:20px;
-    width: 100%;
-    height: 40px;
-    padding: auto;
-    border-radius: 10px;
-}
-
-.income{
-    display: block;
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    font-size: 25px;
-    width: 100%;
-}
-
-.edit-income{
-    display: block;
-    text-align: center;
-    margin:auto;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    background-color: black;
-    color: white;
-    height: 20px;
-    border-radius: 10px;
-}
-
-.trans{
-    text-align: center;
-    background-color:rgb(0, 180, 84);
-    color: white;
-    margin-top:50px;
-    width: 100%;
-    height: 40px;
-    padding: auto;
-    border-radius: 10px;
-}
-
-.transaction-list{
-    display: flex;
-    font-size: 20px;
-    padding: 25px;
-}
-
-.trans-list-item{
-    margin-left: 25px;
-}
-
-.trans-list-item a{
-    text-decoration: none;
-    color: black;
-}
-
-.trans-list-item:hover{
-    background-color: lightgrey;
-    border-radius: 50%;
-}
-
-.add-trans-btn{
-    display: block;
-    text-align: center;
-    margin-top: 20;
-    margin:auto;
-    background-color:midnightblue;
-    color: gold;
-    height: 50px;
-    width: 15%;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-.add-trans-btn:hover{
-    background-color: greenyellow;
-    color: indigo;
-}
-
-.add-link a{
-    text-decoration: none;
-}
-
-.stats{
-    font-size: 20px;
-}
-
-.remaining{
-    background-color: yellow;
-    text-align: center;
 }

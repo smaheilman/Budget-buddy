@@ -1,75 +1,78 @@
 <h2 class="intro"> Welcome to your profile {{this.user.0.username}}</h2>
 <section>
-    <h2 class="budget">Budget</h2>
-    <div>
-        <div class="income">
-            Your monthly income is ${{this.user.0.monthly_income}}
-        </div>
-        <button type="button" class="edit-income" id="modal-btn">Edit Income</button>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <form class="edit-income-form">
-                    <div>
-                        <div class="incomeId">{{this.user.0.id}}</div>
-                        <label for="monthly_income">Monthly Income:</label>
-                        $<input type="number" id="monthly_income" name="monthly_income"
-                            value="{{user.0.monthly_income}}" />
-                        <button type="submit" class="edit-income-btn submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <h2 class="budget">Budget</h2>
+  <div>
+    <div class="income">
+      Your monthly income is ${{this.user.0.monthly_income}}
     </div>
+    <button type="button dir-btn" class="edit-income" id="modal-btn">Edit Income</button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <form class="edit-income-form">
+          <div>
+            <div class="incomeId">{{this.user.0.id}}</div>
+            <label for="monthly_income">Monthly Income:</label>
+            $<input
+              type="number"
+              id="monthly_income"
+              name="monthly_income"
+              value="{{user.0.monthly_income}}"
+            />
+            <button type="submit" class="edit-income-btn submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    {{#if user.0.transactions.length}}
+  {{#if user.0.transactions.length}}
     <section>
-        <h2 class="trans">Your Transactions</h2>
-        <ol class="transaction-list">
-            {{#each user.0.transactions}}
-            <li class="trans-list-item">
-                <a class="trans-link" href="/profile/edit/{{id}}">
-                    <div class="meta">
-                        <p>{{memo}}</p>
-                        <p>How much:</p>
-                        <div class="trans-{{@index}}">${{amount}}</div>
-                        <p>Date of transaction: {{format_date date}}</p>
-                        <p>Category: {{category}}</p>
-                        {{log amount}}
-                    </div>
-                </a>
-            </li>
-            <!--<div>
+      <h2 class="trans">Your Transactions</h2>
+      <ol class="transaction-list">
+        {{#each user.0.transactions}}
+          <li class="trans-list-item">
+            <a class="trans-link" href="/profile/edit/{{id}}">
+              <div class="meta">
+                <p>{{memo}}</p>
+                <p>How much:</p>
+                <div class="trans-{{@index}}">${{amount}}</div>
+                <p>Date of transaction: {{format_date date}}</p>
+                <p>Category: {{category}}</p>
+                {{log amount}}
+              </div>
+            </a>
+          </li>
+          <!--<div>
                 <a href="/profile/edit/{{id}}">
                     <button type="button">Edit transaction</button>
                 </a>
             </div>-->
-            {{/each}}
-        </ol>
+        {{/each}}
+      </ol>
     </section>
-    {{/if}}
+  {{/if}}
 
-    <div class="add-link">
-        <a href="/transaction">
-            <button class="add-trans-btn" type="button">Add transaction</button>
-        </a>
-    </div>
-</section>
-
-<div class="pie-chart">
-    <canvas id="myChart" width="400" height="400"></canvas>
-</div>
-<div class="stats">
+  <div class="add-link">
+    <a href="/transaction">
+      <button class="add-trans-btn" type="button">Add transaction</button>
+    </a>
+  </div>
+  <div class="stats">
     <p>Total Spent: ${{totals.0.transTotal}}</p>
     <p class="remaining">Total Remaining: ${{totals.0.remaining}}</p>
     <p>Total spent on bills and utilities: ${{totals.0.buTotal}}</p>
     <p>Total spent on entertainment: ${{totals.0.entTotal}}</p>
     <p>Total spent on shopping: ${{totals.0.shopTotal}}</p>
     <p>Total other expenses: ${{totals.0.otherTotal}}</p>
-    
-</div>
+
+  </div>
+  <div class="pie-chart">
+    <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
+  
+</section>
+
 <script src="/javascript/edit-income.js"></script>
 <script src="/javascript/chart.js"></script>
 <script src="/javascript/budget-chart.js"></script>
-
-

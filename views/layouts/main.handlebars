@@ -11,14 +11,14 @@
     <div class="wrapper">
       <header>
         <h1>
-          <a href="/">Budget Buddy</a>
+          <div class="dir-btn" href="/">Budget Buddy</div>
         </h1>
         <nav>
           {{#if loggedIn}}
-            <a id="logout" class="button">Logout</a>
+            <button id="logout" class="button">Logout</button>
           {{else}}
-            <a class="button" id="login-button" href="/login">Login</a>
-            <a class="button" href="/login">Signup</a>
+            <button class="button dir-btn" id="login-button" href="/login">Login</button>
+            <button class="button dir-btn" href="/login">Signup</button>
           {{/if}}
         </nav>
       </header>
@@ -26,13 +26,16 @@
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        &copy;Budget Buddy 2021
       </footer>
+      <div id='animation-div'></div>
     </div>
 
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{/if}}
+    <script src="/javascript/animations/anime.min.js"></script>
+    <script src='/javascript/animations/redirect.js'></script>
   </body>
 
 </html>

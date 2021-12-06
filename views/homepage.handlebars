@@ -1,21 +1,14 @@
-<header>
-<nav>
-    {{#if loggedIn}}
-    <a href="/login">Your Profile</a>
-    {{/if}}
-</nav>
-</header>
-<div class="homepage">
+<section class="handlebar-container">
     <div>
         <h2>Budget Buddy helps <br />you save better</h2>
-        <p>Create a budget, save more, enjoy</p>
-        <a class="button" href="/login">Save More</a>
+        <p>Create a budget, save more and enjoy</p>
+        <button class="button dir-btn" href="/login">Save More</button>
     </div>
     <div>
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
     
-</div>
+</section>
 <script src="/javascript/chart.js"></script>
    {{!-Small script to display chart with predetermined values --}}
 <script defer>

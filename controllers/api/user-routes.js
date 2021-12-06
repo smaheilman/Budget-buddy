@@ -94,11 +94,7 @@ router.post('/login', (req, res) => {
           
           res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
-<<<<<<< HEAD
       })
-=======
-      }) 
->>>>>>> a8da50663bc283146d1f7d54a7cabc6bbf72f6a4
 });
 
 router.post('/logout', (req, res) => {

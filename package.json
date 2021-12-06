@@ -29,15 +29,12 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "alinex-handlebars": "^1.2.2",
-    "handlebars-helpers": "^0.10.0"
-=======
+    "handlebars-helpers": "^0.10.0",
     "connect-session-sequelize": "^7.1.2",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "path": "^0.12.7",
     "sequelize": "^6.12.0-alpha.1"
->>>>>>> a8da50663bc283146d1f7d54a7cabc6bbf72f6a4
   }
 }
