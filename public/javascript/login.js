@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
         if (response.ok) {
             //console.log({response});
             //console.log
-            document.location.replace('/profile');
+            redirectAnimation('/profile');
             
         } else {
             alert(response.statusText);
@@ -51,7 +51,7 @@ async function signupFormHandler(event) {
         console.log(response)
 
         if (response.ok) {
-            document.location.replace('/profile');
+            redirectAnimation('/profile');
         } else {
             alert(response.statusText);
         }
