@@ -1,6 +1,6 @@
 <section class="handlebar-container" id="profile">
 
-  <div style="flex: 1;">
+  <div style="flex: 2;">
     <h2 class="intro" style="flex: 100%;">Welcome {{this.user.0.username}}!</h2>
     <div>
       <article>
@@ -39,69 +39,74 @@
     </div>
 
     {{#if user.0.transactions.length}}
-      <article>
-        <h3 class="trans">Spending</h3>
-        <table class="transaction-list table-secondary table table-striped">
-          <thead>
-            <tr class="table-dark">
-              <th>Name</th>
-              <th>Amount</th>
-              <th>Date</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each user.0.transactions}}
-
-              <tr>
-
-                <td class="transaction-name" id="{{@index}}-name">
-                  <a
-                    class="text-dark trans-link trans-{{@index}}"
-                    href="/profile/edit/{{id}}"
-                  >{{memo}}</a></td>
-                <td id="{{@index}}-amount">$<span></span>{{amount}}</td>
-                <td id="{{@index}}-date">{{format_date date}}</td>
-                <td> {{category}}</td>
+      <article class="has-pie">
+        <div style="flex: 2;">
+          <h3 class="trans">Spending</h3>
+          <table class="transaction-list table-secondary table table-striped">
+            <thead>
+              <tr class="table-dark">
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Category</th>
               </tr>
+            </thead>
+            <tbody>
+              {{#each user.0.transactions}}
 
-              <!--<div>
+                <tr class="transaction-row" id="{{@index}}-row">
+
+                  <td class="transaction-name" id="{{@index}}-name">
+                    <a
+                      class="text-dark trans-link trans-{{@index}}"
+                      href="/profile/edit/{{id}}"
+                    >{{memo}}</a></td>
+                  <td id="{{@index}}-amount">${{amount}}</td>
+                  <td id="{{@index}}-date">{{format_date date}}</td>
+                  <td id="{{@index}}-category"> {{category}}</td>
+                </tr>
+
+                <!--<div>
                 <a href="/profile/edit/{{id}}">
                     <button type="button">Edit transaction</button>
                 </a>
             </div>-->
-            {{/each}}
-            <tr class="table-dark">
-              <td style="font-weight: bolder;">Total</td>
-              <td style="font-weight: bolder;">${{totals.0.transTotal}}</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <button class="btn btn-secondary add-trans-btn" type="button">Add
-          transaction</button>
+              {{/each}}
+              <tr class="table-dark">
+                <td style="font-weight: bolder;">Total</td>
+                <td style="font-weight: bolder;">${{totals.0.transTotal}}</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn-secondary add-trans-btn" type="button">Add
+            transaction</button>
+        </div>
+
+        <div class="chart-div"><canvas id="trans-chart"></canvas></div>
+
       </article>
-      <article style="border: none;">
-        <p>Spending: ${{totals.0.transTotal}}</p>
-        <p class="remaining">Savings: ${{totals.0.remaining}}</p>
-        <p>Bills and Utilities: $<span
-            id="bills-total"
-          >{{totals.0.buTotal}}</span></p>
-        <p>Entertainment: $<span
-            id="entertainment-total"
-          >{{totals.0.entTotal}}</span></p>
-        <p>Shopping: $<span
-            id="shopping-total"
-          >{{totals.0.shopTotal}}</span></p>
-        <p>Expenses: $<span id="other-total">{{totals.0.otherTotal}}</span></p>
+      <article class="has-pie" style="border: none;">
+        <div style="flex: 2;">
+          <p>Spending: ${{totals.0.transTotal}}</p>
+          <p class="remaining">Savings: ${{totals.0.remaining}}</p>
+          <p>Bills and Utilities: $<span
+              id="bills-total"
+            >{{totals.0.buTotal}}</span></p>
+          <p>Entertainment: $<span
+              id="entertainment-total"
+            >{{totals.0.entTotal}}</span></p>
+          <p>Shopping: $<span
+              id="shopping-total"
+            >{{totals.0.shopTotal}}</span></p>
+          <p>Expenses: $<span
+              id="other-total"
+            >{{totals.0.otherTotal}}</span></p></div>
+        <div class="chart-div"><canvas id="bill-chart"></canvas></div>
       </article>
     {{/if}}
 
-  </div>
-
-  <div class="pie-chart" style="flex: 1;">
-    <canvas id="myChart" width="400" height="400"></canvas>
   </div>
 
 </section>

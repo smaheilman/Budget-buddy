@@ -72,6 +72,16 @@ body, html {
     padding: 10px;
     padding-bottom: 30px;
 }
+.has-pie {
+    display: flex;
+    align-items: center;
+    
+}
+.chart-div {
+    flex: 1;
+    min-height: 400px;
+    min-width: 400px;
+}
 
 .handlebar-container {
     min-height: calc(100vh - 140px);
@@ -121,6 +131,9 @@ textarea, input {
 
 form label {
     display: block;
+}
+.pie-chart {
+    padding: 2em;
 }
 .modal {
     display: none;
