@@ -30,10 +30,6 @@
     border-radius: 25px;
     text-decoration: none;
 }
-.button:hover {
-    cursor: pointer;
-    opacity: .8;
-}
 #login-button {
     background: none;
     color: black;
@@ -78,23 +74,25 @@ body, html {
 }
 
 .handlebar-container {
-    height: calc(100vh - 140px);
-}
-
-.handlebar-container{
+    min-height: calc(100vh - 140px);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     font-size: 1.4em;
 }
-.handlebar-container div {
+#landing {
     padding: 0 3em;
+}
+
+#profile div {
+    padding: 0 2em;
 }
 .handlebar-container h2 {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.6em;
 }
-.handlebar-container div p {
+#landing p {
     font-size: 1.3em;
     color: rgb(61, 61, 61);
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -158,4 +156,10 @@ form label {
 
 .signup-form, .login-form{
     display: inline;
+}
+.transaction-link {
+    text-decoration: none;
+}
+.transaction-name {
+    text-decoration: underline;
 }

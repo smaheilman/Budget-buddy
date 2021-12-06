@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget Buddy</title>
+    <link rel="stylesheet" href="/stylesheet/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheet/style.css" />
   </head>
 
@@ -17,10 +18,10 @@
         </h1>
         <nav>
           {{#if loggedIn}}
-            <button id="logout" class="button">Logout</button>
+            <button id="logout" class="btn button">Logout</button>
           {{else}}
-            <button class="button dir-btn" id="login-button" href="/login">Login</button>
-            <button class="button dir-btn" href="/login">Signup</button>
+            <button class="btn button dir-btn" id="login-button" href="/login">Login</button>
+            <button class="btn btn-light button dir-btn" href="/login">Signup</button>
           {{/if}}
         </nav>
       </header>

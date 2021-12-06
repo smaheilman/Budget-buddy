@@ -18,10 +18,8 @@ let redirectAnimation = (link) => {
   });
 }
 const redirectBtns = document.querySelectorAll('.dir-btn');
-console.log(redirectBtns);
 redirectBtns.forEach(btn => {
   let link = btn.attributes.href.textContent;
-  console.log(link)
   btn.addEventListener('click', () => {
     redirectAnimation(link);
   })
