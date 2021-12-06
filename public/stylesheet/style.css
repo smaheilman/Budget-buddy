@@ -1,219 +1,257 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Yanone+Kaffeesatz&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Yanone+Kaffeesatz&display=swap");
 
 :root {
-    --primary-color: rgb(92, 204, 27);
+  --primary-color: rgb(92, 204, 27);
 }
 * {
-    box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 }
 .dir-btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 #animation-div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--primary-color);
 }
 .button {
-    font-size: .8em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    height: 50px;
-    width: 130px;
-    border-radius: 25px;
-    text-decoration: none;
+  font-size: 0.8em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  height: 50px;
+  width: 130px;
+  border-radius: 25px;
+  text-decoration: none;
 }
 .login-button {
-    background: #fff;
-    color: black;
+  background: #fff;
+  color: black;
 }
 
-.wrapper{
-    min-height: 100%;
-    position: relative;
+.wrapper {
+  min-height: 100%;
+  position: relative;
 }
-header {  
-    color: var(--primary-color);
-    padding: 10px;
-    font-family: 'Noto Sans', sans-serif;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    height: 80px;
+header {
+  color: var(--primary-color);
+  padding: 10px;
+  font-family: "Noto Sans", sans-serif;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 80px;
 }
 header h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 header a {
-    text-decoration: none;
-    color: var(--primary-color);
+  text-decoration: none;
+  color: var(--primary-color);
 }
 nav {
-    font-size: 1.1em;
-    margin-right: 0;
-    padding-right: 3em;
-    margin-left: auto;
+  font-size: 1.1em;
+  margin-right: 0;
+  padding-right: 3em;
+  margin-left: auto;
 }
 
-body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.body{
-    padding: 10px;
-    padding-bottom: 30px;
+.body {
+  padding: 10px;
+  padding-bottom: 30px;
 }
 .has-pie {
-    display: flex;
-    align-items: center;
-    
+  display: flex;
+  align-items: center;
 }
 .chart-div {
-    flex: 1;
-    min-height: 400px;
-    min-width: 400px;
+  flex: 1;
+  min-height: 400px;
+  min-width: 400px;
 }
 
 .handlebar-container {
-    min-height: calc(100vh - 140px);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 1.4em;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.4em;
 }
 .handlebar-container article {
-    border-bottom: solid 2px rgb(107, 107, 107);
-    padding: 20px 0px;
+  border-bottom: solid 2px rgb(107, 107, 107);
+  padding: 20px 0px;
 }
 .handlebar-container form {
-    margin-left: 5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-left: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.handlebar-container form div{
-    margin-bottom: .5em;
+.handlebar-container form div {
+  margin-bottom: 0.5em;
 }
 #add-transation-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 140px);
-    font-size: 1.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  font-size: 1.4em;
 }
 .new-transaction-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5em;
 }
-.new-transaction-form div{
-    
-    margin: .5em 0;
+.new-transaction-form div {
+  margin: 0.5em 0;
+}
+#edit-transaction-container {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#back-to-profile {
+  text-decoration: underline;
+  color: midnightblue;
+}
+#back-to-profile:hover {
+  cursor: pointer;
+}
+#save-button {
+  border-radius: 5px;
+  margin: 1em;
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+}
+#save-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#delete-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#delete-button {
+  margin: 1em;
+  border-radius: 5px;
+  background-color: rgb(175, 26, 26);
+}
+#edit-transaction-btn-container {
+  display: flex;
+  align-items: center;
+}
+.edit-transaction-form {
+  margin: 1em !important;
+  align-items: flex-start !important;
 }
 .login-form {
-    background-color: var(--primary-color);
-    flex: 1;
-    padding: 1em;
-    border-radius: 10px;
+  background-color: var(--primary-color);
+  flex: 1;
+  padding: 1em;
+  border-radius: 10px;
 }
 .signup-form {
-    flex: 3
+  flex: 3;
 }
 #landing {
-    padding: 0 3em;
+  padding: 0 3em;
 }
 
 #profile {
-    padding: 0 2em;
+  padding: 0 2em;
 }
 .handlebar-container h2 {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 1.6em;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.6em;
 }
 #landing p {
-    font-size: 1.3em;
-    color: rgb(61, 61, 61);
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.3em;
+  color: rgb(61, 61, 61);
+  font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-footer{
-    width: 100%;
-    height: 60px;
-    background-color: rgb(92, 204, 27);
-    color: white;  
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    font-size: 1.1em;
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(92, 204, 27);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  font-size: 1.1em;
 }
 
-textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+textarea,
+input {
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 form label {
-    display: block;
+  display: block;
 }
 .pie-chart {
-    padding: 2em;
+  padding: 2em;
 }
 .modal {
-    display: none;
-    position: fixed; 
-    padding-top: 50px;
-    left: 0; 
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 75%;  
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
 .close-btn {
-    float: right; 
-    color: lightgray; 
-    font-size: 24px;  
-    font-weight: bold;
+  float: right;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .close-btn:hover {
-    color: darkgray;
+  color: darkgray;
 }
 
-
-.signup-form, .login-form{
-    display: inline;
+.signup-form,
+.login-form {
+  display: inline;
 }
 .transaction-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 .transaction-name {
-    text-decoration: underline;
+  text-decoration: underline;
 }

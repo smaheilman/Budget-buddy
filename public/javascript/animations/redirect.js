@@ -12,7 +12,8 @@ let redirectAnimation = (link) => {
     easing: 'easeOutSine',
     update: function (anim) {
       if (anim.progress >= 100) {
-        window.location.replace("." + link);
+
+        window.location.replace("/." + link);
       }
     }
   });
