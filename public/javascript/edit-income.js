@@ -17,28 +17,33 @@ async function incomeFormHandler(event) {
     if (response.ok) {
         console.log(incomeId);
         console.log(monthly_income);
+        document.location.replace('/profile/');
     } else {
         alert(response.statusText);
     }
 }
 
-// let modalBtn = document.getElementById("modal-btn")
-// let modal = document.querySelector(".modal")
-// let closeBtn = document.querySelector(".close-btn")
-// let submit = document.querySelector(".submit")
-// modalBtn.onclick = function(){
-//   modal.style.display = "block"
-// }
-// closeBtn.onclick = function(){
-//   modal.style.display = "none"
-// }
-// window.onclick = function(e){
-//   if(e.target == modal){
-//     modal.style.display = "none"
-//   }
-// }
-// submit.onclick = function(){
-//     modal.style.display = "none"
-// }
+let modalBtn = document.getElementById("modal-btn")
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
+let submit = document.querySelector(".submit")
+let id = document.querySelector(".incomeId")
+
+id.style.display = "none";
+
+modalBtn.onclick = function(){
+  modal.style.display = "block"
+}
+closeBtn.onclick = function(){
+  modal.style.display = "none"
+}
+window.onclick = function(e){
+  if(e.target == modal){
+    modal.style.display = "none"
+  }
+}
+submit.onclick = function(){
+    modal.style.display = "none"
+}
 
 document.querySelector('.edit-income-form').addEventListener('submit', incomeFormHandler);
