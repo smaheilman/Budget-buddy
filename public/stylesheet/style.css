@@ -81,11 +81,15 @@ body, html {
     align-items: center;
     font-size: 1.4em;
 }
+.handlebar-container article {
+    border-bottom: solid 2px rgb(107, 107, 107);
+    padding: 20px 0px;
+}
 #landing {
     padding: 0 3em;
 }
 
-#profile div {
+#profile {
     padding: 0 2em;
 }
 .handlebar-container h2 {
