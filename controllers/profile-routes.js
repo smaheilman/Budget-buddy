@@ -56,9 +56,13 @@ const { Budget, User, Transaction } = require('../models'); router.get('/', (req
             shopAmount = shopAmount.reduce(reducer);
             otherAmount = otherAmount.reduce(reducer);
             let transAmount = buAmount + entAmount + shopAmount + otherAmount;
+            let monthly_income = user[0].monthly_income;
+            let remaining = monthly_income - transAmount;
 
-            let totals = [({ transTotal: transAmount, buTotal: buAmount, entTotal: entAmount, shopTotal: shopAmount, otherTotal: otherAmount })];
+            let totals = [({ transTotal: transAmount, buTotal: buAmount, entTotal: entAmount, shopTotal: shopAmount, otherTotal: otherAmount, remaining: remaining })];
             console.log(totals);
+            console.log(remaining);
+            
             
 
             res.render('profile', { totals, user, loggedIn: true });
