@@ -56,10 +56,10 @@
                 <tr class="transaction-row" id="{{@index}}-row">
 
                   <td class="transaction-name" id="{{@index}}-name">
-                    <a
-                      class="text-dark trans-link trans-{{@index}}"
+                    <div
+                      class="dir-btn text-dark trans-link trans-{{@index}}"
                       href="/profile/edit/{{id}}"
-                    >{{memo}}</a></td>
+                    >{{memo}}</div></td>
                   <td id="{{@index}}-amount">${{amount}}</td>
                   <td id="{{@index}}-date">{{format_date date}}</td>
                   <td id="{{@index}}-category"> {{category}}</td>
