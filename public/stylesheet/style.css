@@ -273,3 +273,8 @@ form label {
 .stats{
     font-size: 20px;
 }
+
+.remaining{
+    background-color: yellow;
+    text-align: center;
+}
