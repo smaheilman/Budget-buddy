@@ -1,15 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Yanone+Kaffeesatz&display=swap');
+
+:root {
+    --primary-color: rgb(92, 204, 27);
+}
 * {
     box-sizing: border-box;
+}
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    height: 50px;
+    width: 130px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+.button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+#login-button {
+    background: none;
+    color: black;
 }
 
 .wrapper{
     min-height: 100%;
     position: relative;
 }
-
+header {  
+    color: var(--primary-color);
+    padding: 10px;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+header h1 {
+    font-size: 3em;
+}
 header a {
     text-decoration: none;
-    color: white;
+    color: var(--primary-color);
+}
+nav {
+    font-size: 1.1em;
+    margin-right: 0;
+    padding-right: 3em;
+    margin-left: auto;
 }
 
 body, html {
@@ -23,20 +64,24 @@ body, html {
     padding-bottom: 30px;
 }
 
-header {
-    
-    background-color: aquamarine;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    margin-top: 0;
-    padding: 10px;
-}
+
 
 .homepage{
-    text-align: center;
-    font-size: 30px;
-    color:cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.homepage div {
+    padding: 0 3em;
+}
+.homepage h2 {
+    font-family: 'Noto Sans', sans-serif;
+}
+.homepage div p {
+    font-size: 1.3em;
+    color: rgb(61, 61, 61);
 }
 
 footer{
@@ -44,7 +89,7 @@ footer{
     width: 100%;
     height: 40px;
     bottom: 0;
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     color: white;
     font-size: 20px;
 }
@@ -58,12 +103,6 @@ textarea, input {
 form label {
     display: block;
 }
-
-#loggout {
-    border: none;
-    color: black;
-}
-
 .modal {
     display: none;
     position: fixed; 

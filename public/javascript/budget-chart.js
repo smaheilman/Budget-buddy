@@ -18,12 +18,5 @@ const myChart = new Chart(ctx, {
                 colors.shopping,
             ],
         }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
     }
 });

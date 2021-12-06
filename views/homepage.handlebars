@@ -5,4 +5,37 @@
     {{/if}}
 </nav>
 </header>
-<div class="homepage">Budget Buddy helps you budget!</div>
+<div class="homepage">
+    <div>
+        <h2>Budget Buddy helps <br />you save better</h2>
+        <p>Create a budget, save more, enjoy</p>
+        <a class="button" href="/login">Save More</a>
+    </div>
+    <div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    
+</div>
+<script src="/javascript/chart.js"></script>
+   {{!-Small script to display chart with predetermined values --}}
+<script defer>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+  
+            datasets: [{
+                label: '# of Votes',
+                data: [40, 30, 12, 15, 13],
+                backgroundColor: [
+                    'rgb(5, 153, 17)',
+                    'rgb(255, 159, 64)',
+                   'rgb(54, 162, 235)',
+                    'rgb(255, 99, 132)',
+                    
+                    'rgb(132, 60, 190)'
+                ],
+            }]
+        },
+    });
+</script>

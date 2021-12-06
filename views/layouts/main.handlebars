@@ -1,39 +1,38 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget Buddy</title>
-    <link rel="stylesheet" href="/stylesheet/style.css">
-</head>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Budget Buddy</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <button id="logout" class="btn">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
+      <header>
+        <h1>
+          <a href="/">Budget Buddy</a>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <a id="logout" class="button">Logout</a>
+          {{else}}
+            <a class="button" id="login-button" href="/login">Login</a>
+            <a class="button" href="/login">Signup</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting!
+      </footer>
     </div>
 
     {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
+      <script src="/javascript/logout.js"></script>
     {{/if}}
-
-</body>
+  </body>
 
 </html>
