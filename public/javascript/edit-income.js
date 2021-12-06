@@ -41,5 +41,4 @@ async function incomeFormHandler(event) {
 //     modal.style.display = "none"
 // }
 
-// document.querySelector('.edit-income-form').addEventListener('submit', incomeFormHandler);
 document.querySelector('.edit-income-form').addEventListener('submit', incomeFormHandler);

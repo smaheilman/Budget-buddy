@@ -8,6 +8,9 @@ router.use('/profile', profileRotues);
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 
+router.use((req, res) => {
+    res.redirect('/');
+  });
 
 module.exports = router;
 
