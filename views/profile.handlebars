@@ -56,12 +56,14 @@
 </section>
 
 <div class="pie-chart">
-    **Pie chart**
+    <canvas id="myChart" width="400" height="400"></canvas>
 </div>
 <div class="stats">
     {{#each user.0.transactions}}
         {{amount}}
     {{/each}}
 </div>
-
+<script src="/javascript/chart.js"></script>
 <script src="/javascript/edit-income.js"></script>
+<script src="/javascript/budget-chart.js"></script>
+
