@@ -1,3 +1,6 @@
+let inputs = document.querySelectorAll("input");
+inputs.forEach((input) => (input.value = ""));
+
 async function loginFormHandler(event) {
     event.preventDefault();
 

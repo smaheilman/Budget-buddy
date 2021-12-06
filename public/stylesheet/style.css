@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /*border:black 1px solid;*/
 }
 
 .wrapper{
@@ -24,29 +25,66 @@ body, html {
 }
 
 header {
-    
-    background-color: aquamarine;
+    background-color:dodgerblue;
     font-size: 30px;
     color: white;
     text-align: center;
-    margin-top: 0;
     padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 75px;
+    border-radius: 10px;
+    width: 100%;
 }
 
 .homepage{
     text-align: center;
-    font-size: 30px;
-    color:cornflowerblue;
+    font-size: 40px;
+    color:black;
+    margin-top: 200px;
+    float: right;
+    background-color: darkorange;
+    border-radius: 10px;
+    height: 150px;
+    padding-top: 55px;
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.log{
+    color: white;
+    text-decoration: none;
+    background-color:chartreuse;
+    float: left;
+    margin-top: 550px;
+    border-radius: 10px;
+    height: 150px;
+    width: 50%;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.log a{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.log a:hover{
+    color: blue;
 }
 
 footer{
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    bottom: 0;
-    background-color: aquamarine;
+    background-color: dodgerblue;
     color: white;
     font-size: 20px;
+    margin-top: 40px;    
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 40px;
 }
 
 textarea, input {
@@ -107,4 +145,131 @@ form label {
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
+}
+
+.signup-form, .login-form{
+    display: inline;
+}
+
+.login, .signup{
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: 500px;
+    justify-content: center;
+    font-size: 20px;
+}
+
+#login-btn, #signup-btn{
+    margin-top: 10px;
+    background-color:black;
+    color: antiquewhite;
+    border-radius: 7px;
+    width: 500px;
+}
+
+#login-btn:hover{
+    background-color: dimgrey;
+    color:springgreen;
+}
+
+#signup-btn:hover{
+    background-color:springgreen;
+    color: dimgray;
+}
+
+.intro{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    height: 50px;
+}
+
+.budget{
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin-top:20px;
+    width: 100%;
+    height: 40px;
+    padding: auto;
+    border-radius: 10px;
+}
+
+.income{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 25px;
+    width: 100%;
+}
+
+.edit-income{
+    display: block;
+    text-align: center;
+    margin:auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.trans{
+    text-align: center;
+    background-color:rgb(0, 180, 84);
+    color: white;
+    margin-top:50px;
+    width: 100%;
+    height: 40px;
+    padding: auto;
+    border-radius: 10px;
+}
+
+.transaction-list{
+    display: flex;
+    font-size: 20px;
+    padding: 25px;
+}
+
+.trans-list-item{
+    margin-left: 25px;
+}
+
+.trans-list-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.trans-list-item:hover{
+    background-color: lightgrey;
+    border-radius: 50%;
+}
+
+.add-trans-btn{
+    display: block;
+    text-align: center;
+    margin-top: 20;
+    margin:auto;
+    background-color:midnightblue;
+    color: gold;
+    height: 50px;
+    width: 15%;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.add-trans-btn:hover{
+    background-color: greenyellow;
+    color: indigo;
+}
+
+.add-link a{
+    text-decoration: none;
+}
+
+.stats{
+    font-size: 20px;
 }

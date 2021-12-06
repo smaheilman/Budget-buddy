@@ -1,8 +1,15 @@
-<header>
+<!--<header>
 <nav>
     {{#if loggedIn}}
     <a href="/profile">Your Profile</a>
     {{/if}}
 </nav>
-</header>
-<div class="homepage">Budget Buddy helps you budget!</div>
+</header>-->
+<div class="homepage">Helps you create a budget!</div>
+<div class="log">
+    {{#if loggedIn}}
+    <button id="logout" class="btn">Logout</button>
+    {{else}}
+    <a class="login" href="/login">Login/Sign-up</a>
+    {{/if}}
+</div>
