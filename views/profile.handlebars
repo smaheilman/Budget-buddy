@@ -38,7 +38,6 @@
       </div>
     </div>
 
-    {{#if user.0.transactions.length}}
       <article class="has-pie">
         <div style="flex: 2;">
           <h3 class="trans">Spending</h3>
@@ -80,7 +79,7 @@
               </tr>
             </tbody>
           </table>
-          <button class="btn btn-secondary add-trans-btn" type="button">Add
+          <button class="btn dir-btn btn-secondary add-trans-btn" href='/transaction'>Add
             transaction</button>
         </div>
 
@@ -105,7 +104,6 @@
             >{{totals.0.otherTotal}}</span></p></div>
         <div class="chart-div"><canvas id="bill-chart"></canvas></div>
       </article>
-    {{/if}}
 
   </div>
 

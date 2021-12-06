@@ -30,8 +30,8 @@
     border-radius: 25px;
     text-decoration: none;
 }
-#login-button {
-    background: none;
+.login-button {
+    background: #fff;
     color: black;
 }
 
@@ -94,6 +94,43 @@ body, html {
 .handlebar-container article {
     border-bottom: solid 2px rgb(107, 107, 107);
     padding: 20px 0px;
+}
+.handlebar-container form {
+    margin-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.handlebar-container form div{
+    margin-bottom: .5em;
+}
+#add-transation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    font-size: 1.4em;
+}
+.new-transaction-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: .5em;
+}
+.new-transaction-form div{
+    
+    margin: .5em 0;
+}
+.login-form {
+    background-color: var(--primary-color);
+    flex: 1;
+    padding: 1em;
+    border-radius: 10px;
+}
+.signup-form {
+    flex: 3
 }
 #landing {
     padding: 0 3em;
