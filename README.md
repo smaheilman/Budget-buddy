@@ -17,7 +17,7 @@ Our team created a application that will assist people in making a monthly budge
 *sequelize
 
 ## Link to deployed application:</br>
-
+https://infinite-sea-98511.herokuapp.com/
 
 
 ## Screenshot:</br>
