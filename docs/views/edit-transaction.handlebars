@@ -1,0 +1,60 @@
+<article class="handlebar-container" id="edit-transaction-container">
+  <div class="dir-btn" id="back-to-profile" href="/profile">
+    &larr; Back to your profile</div>
+  <h2>
+    Edit Transaction
+  </h2>
+  <form class="edit-transaction-form">
+    <div>
+      <label for="memo">Transaction Memo</label>
+      <input
+        type="string"
+        id="transaction-memo"
+        name="transaction-memo"
+        value="{{transaction.memo}}"
+      />
+    </div>
+    <div>
+      <label for="amount">How much was spent?</label>
+      <input
+        type="integer"
+        id="transaction-amount"
+        name="transaction-amount"
+        value="{{transaction.amount}}"
+      />
+    </div>
+    <div>
+      <p>Previous Date of Transaction: {{format_date transaction.date}}</p>
+      <label for="date">New Date of Transaction</label>
+      <input
+        type="date"
+        id="transaction-date"
+        name="transaction-date"
+        value="{{format_date transaction.date}}"
+      />
+
+    </div>
+    <div>
+      <label for="category">Choose a category:</label>
+
+      <select name="transaction-category" id="transaction-category">
+        <option type="string" value="Bills/Utilities">Bills/Utilities</option>
+        <option type="string" value="Shopping">Shopping</option>
+        <option type="string" value="Entertainment">Entertainment</option>
+        <option type="string" value="Other">Other</option>
+      </select>
+    </div>
+    <div id='edit-transaction-btn-container'>
+      <button type="submit" id="save-button" class="button btn">Save Transaction</button>
+      <button
+        type="button"
+        id="delete-button"
+        class="button delete-transaction-btn"
+      >Delete Transaction</button>
+    </div>
+
+  </form>
+</article>
+
+<script src="/javascript/edit-transaction.js"></script>
+<script src="/javascript/delete-transaction.js"></script>

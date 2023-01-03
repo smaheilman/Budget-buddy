@@ -1,0 +1,42 @@
+<section class="handlebar-container">
+    <div>
+        <h2>Budget Buddy helps <br />you save better</h2>
+        <p>Create a budget, save more and enjoy</p>
+        <button class="button dir-btn" href="/login">Save More</button>
+    </div>
+    <div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    
+</section>
+<script src="/javascript/chart.js"></script>
+   {{!-Small script to display chart with predetermined values --}}
+<script defer>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+  
+            datasets: [{
+                label: '# of Votes',
+                data: [40, 30, 12, 15, 13],
+                backgroundColor: [
+                    'rgb(5, 153, 17)',
+                    'rgb(255, 159, 64)',
+                   'rgb(54, 162, 235)',
+                    'rgb(255, 99, 132)',
+                    
+                    'rgb(132, 60, 190)'
+                ],
+            }]
+        },
+        options: {
+            plugins: {
+                tooltip: {
+                    enabled: false
+                }
+            }
+        }
+        
+    });
+</script>

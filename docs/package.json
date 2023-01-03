@@ -1,0 +1,40 @@
+{
+  "name": "Budget-buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smaheilman/Budget-buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smaheilman/Budget-buddy/issues"
+  },
+  "homepage": "https://github.com/smaheilman/Budget-buddy#readme",
+  "dependencies": {
+    "alinex-handlebars": "^1.2.2",
+    "bcrypt": "^5.0.1",
+    "chart.js": "^3.6.2",
+    "dotenv": "^10.0.0",
+    "express-handlebars": "^6.0.2",
+    "handlebars-helpers": "^0.10.0",
+    "mysql2": "^2.3.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "path": "^0.12.7",
+    "connect-session-sequelize": "^7.1.2",
+    "sequelize": "^6.12.0-alpha.1"
+  },
+  "devDependencies": {
+    "alinex-handlebars": "^1.2.2",
+    "handlebars-helpers": "^0.10.0"
+  }
+}

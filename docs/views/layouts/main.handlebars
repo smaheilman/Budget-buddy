@@ -1,0 +1,42 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="/stylesheet/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+  </head>
+
+  <body>
+    <script src='/javascript/jquery-3.6.0.min.js'></script>
+    <script src="/javascript/animations/anime.min.js"></script>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <div class="dir-btn" href="/">Budget Buddy</div>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <button id="logout" class="btn button">Logout</button>
+          {{else}}
+            <button class="button dir-btn login-button" id="login-button" href="/login">Login</button>
+            <button class="button dir-btn signup-button" href="/login">Signup</button>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        &copy;Budget Buddy 2021
+      </footer>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src='/javascript/animations/redirect.js'></script>
+  </body>
+
+</html>
