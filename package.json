@@ -35,8 +35,6 @@
   },
   "devDependencies": {
     "alinex-handlebars": "^1.2.2",
-    
     "handlebars-helpers": "^0.10.0"
-    
   }
 }
