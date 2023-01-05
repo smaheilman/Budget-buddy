@@ -22,3 +22,7 @@ https://infinite-sea-98511.herokuapp.com/
 
 ## Screenshot:</br>
 <img width="1920" alt="Budget_Buddy_Screenshot" src="https://user-images.githubusercontent.com/88754114/144938032-de85ea09-6806-49bd-a6cf-920a910197f7.png">
+
+---
+permalink: ./docs/views/layouts/login.handlebars
+---
