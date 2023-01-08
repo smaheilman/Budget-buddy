@@ -17,7 +17,7 @@ const exphbs = require('express-handlebars');
 // const helpers = require('./utils/helpers');
 // const hbs = exphbs.create({ helpers });
 
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers.js');
 
 const sess = {
   secret: 'Super duper duper secret',
