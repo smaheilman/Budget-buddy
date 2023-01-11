@@ -1,5 +1,5 @@
-var helpers = require('handlebars-helpers');
-var math = helpers.math();
+const helpers = require('handlebars-helpers');
+const math = helpers.math();
 
 module.exports = {
     format_date: date => {

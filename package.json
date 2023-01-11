@@ -35,7 +35,6 @@
     "sequelize": "^6.12.0-alpha.1"
   },
   "devDependencies": {
-    "alinex-handlebars": "^1.2.2",
-    "handlebars-helpers": "^0.10.0"
+    "alinex-handlebars": "^1.2.2"
   }
 }
