@@ -25,7 +25,6 @@
     "chart.js": "^3.6.2",
     "dotenv": "^10.0.0",
     "express-handlebars": "^6.0.2",
-    "handlebars-helpers": "^0.10.0",
     "mysql2": "^2.3.3",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
